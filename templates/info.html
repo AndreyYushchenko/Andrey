@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Подключаем Font Awesome для иконок социальных сетей -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        section {
+            text-align: center; /* Центрируем текст в секциях */
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        h2, h3 {
+            color: #ff4081;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #ff4081;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-icon {
+            font-size: 30px;
+            margin: 0 10px;
+            color: #f1f1f1;
+        }
+
+        .social-icon:hover {
+            color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Информация о нас</h1>
+    </header>
+
+    <!-- Навигационная панель -->
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/rules">Правила</a>
+        <a href="/info">Информация</a>
+    </nav>
+
+    <main class="container">
+        <section>
+            <h2>О нашем проекте PoliTime</h2>
+            <p>Проект PoliTime — это уникальная игровая площадка, основанная на анархии, свободе и хаосе. На нашем сервере нет жестких правил — каждый игрок сам решает, как ему действовать, и что будет делать в этом огромном и безумном мире.</p>
+        </section>
+
+        <section>
+            <h3>Евенты</h3>
+            <p>Мы регулярно проводим захватывающие события, которые объединяют игроков с разных уголков сервера. Эти мероприятия наполнены напряжением, стратегией и шансом на уникальные награды. Массовые битвы, командные сражения и другие форматы событий дадут вам шанс проявить свою силу и хитрость.</p>
+        </section>
+
+        <section>
+            <h3>Боссы на PvP-арене</h3>
+            <p>В центре сервера находится PvP-арена, где игроки могут сразиться с мощными боссами. Эти боссы — настоящий вызов для самых смелых. Здесь игроки могут объединяться в группы, чтобы побеждать сильнейших врагов и зарабатывать редкие трофеи. Впрочем, будьте осторожны — другие игроки могут нападать на вас, чтобы забрать ваши победы.</p>
+        </section>
+
+        <section>
+            <h3>Мистик</h3>
+            <p>Это событие, которое откроет вам доступ к редким артефактам, дающим игрокам особые силы и способности. Чтобы стать обладателем таких предметов, придется пройти через жесткие испытания и бороться за свое место в мире магии и силы.</p>
+        </section>
+
+        <section>
+            <h3>Звезда</h3>
+            <p>Один из самых желанных трофеев на сервере. Это магический предмет, который дает игрокам огромную силу. Чтобы завоевать Звезду, вам предстоит пройти множество испытаний и победить сильнейших противников. Только самые стойкие смогут стать её владельцами и использовать её могущество в бою.</p>
+        </section>
+
+        <section>
+            <h3>Взрывные базы</h3>
+            <p>На PoliTime все решения могут стать судьбоносными. Используя различные виды взрывчатки, игроки могут разрушать базы других игроков, забирать их ресурсы и трофеи. Никто не в безопасности, и даже самые защищенные укрепления могут быть разрушены другими игроками. Кто окажется самым умным и быстрым, тот и победит в этом безумном мире!</p>
+        </section>
+
+        <section>
+            <p>В мире PoliTime царит настоящий анархизм. Здесь нет правил — есть только выживание, борьба за ресурсы, стратегию и силу. Присоединяйтесь к нам, если хотите испытать настоящее безумие и свободу действий в мире Minecraft!</p>
+        </section>
+
+        <section>
+            <h2>Контакты</h2>
+            <p>Если у вас есть вопросы, не стесняйтесь обращаться к нам. Мы всегда готовы помочь!</p>
+            <p>Напишите нам на почту: <a href="mailto:politime.ua@gmail.com">politime.ua@gmail.com</a></p>
+        </section>
+
+        <section>
+            <h2>Партнеры</h2>
+            <p>Мы гордимся сотрудничеством с ведущими разработчиками и платформами в мире Minecraft, а также с надежными партнерами, которые помогают улучшать наш сервис.</p>
+        </section>
+
+        <!-- Социальные сети -->
+        <section>
+            <h2>Мы в социальных сетях</h2>
+            <p>Следите за нами в социальных сетях:</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@dANJLA" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@danjla05" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://t.me/politimeua" target="_blank" class="social-icon" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://discord.gg/2SyNcfMEpX" target="_blank" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PoliTime. Все права защищены.</p>
+    </footer>
+</body>
+</html>

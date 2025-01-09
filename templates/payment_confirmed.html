@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата подтверждена</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #181818;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Высота страницы всегда равна высоте окна браузера */
+        }
+
+        /* Центрируем основной контент */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 50px;
+            text-align: center;
+            flex: 1; /* Заставляем контейнер с основным содержимым занимать всё доступное пространство */
+        }
+
+        /* Заголовок */
+        h1 {
+            font-size: 48px;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        /* Стили для страницы подтверждения */
+        p {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #ff4081;
+        }
+
+        /* Стили для футера */
+        footer {
+            width: 100%;
+            background-color: #333;
+            padding: 8px 0;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            margin-top: auto; /* Это заставляет футер располагаться внизу, если содержимого недостаточно */
+        }
+
+        /* Добавление адаптивности */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 32px;
+            }
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Оплата будет подтверждена в тичение 1 часа!</h1>
+        <p><strong>Продукт:</strong> {{ product_name }}</p>
+        <p><strong>Цена:</strong> {{ price }} грн</p>
+        <p><strong>Ник:</strong> {{ username }}</p>
+        <p><strong>Комментарий:</strong> {{ comment }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Код транзакции:</strong> {{ transaction_code }}</p>
+        <h1>Спасибо за покупку!</h1>
+    </div>
+    <footer>
+        <p>&copy; 2025 Все права защищены</p>
+    </footer>
+</body>
+</html>

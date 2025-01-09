@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoliTime</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Описание скрыто по умолчанию */
+        .product-description {
+            display: none;
+        }
+
+        /* Навигационная панель */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Стили кнопки "Купить" */
+        .buy-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .buy-btn:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        // Функция для переключения описания при клике
+        function toggleDescription(productId) {
+            const description = document.getElementById('description-' + productId);
+            // Переключаем видимость описания (если оно скрыто, покажем, если видно — скроем)
+            const isVisible = description.style.display === 'block';
+            description.style.display = isVisible ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Добро пожаловать в PoliTime</h1>
+            <p>Поддержите любимых авторов через донаты и получите доступ к эксклюзивным товарам!</p>
+        </header>
+
+        <!-- Навигационная панель -->
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/rules">Правила</a>
+            <a href="/info">Информация</a>
+        </nav>
+
+        <div class="donate-section">
+            <h2>Донат</h2>
+            <div class="products">
+                <!-- START 30д -->
+                <div class="product" onclick="toggleDescription('start_30d')">
+                    <img src="{{ url_for('static', filename='images/start_30d.jpg') }}" alt="START 30д">
+                    <p>START 30д — 19 грн</p>
+                    <a href="/pay/start_subscription" class="buy-btn">Купить</a>
+                    <div id="description-start_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/hat - Надеть предмет на голову</p>
+                        <p>/ec-1 - Открыть эндер-сундук</p>
+                        <p>/craft - Открыть верстак</p>
+                        <p>/kits - Набор STAR</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>4 региона</p>
+                        <p>6 слотов на аукционе</p>
+                        <p>2 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- METEOR 30д -->
+                <div class="product" onclick="toggleDescription('meteor_30d')">
+                    <img src="{{ url_for('static', filename='images/meteor_30d.jpg') }}" alt="METEOR 30д">
+                    <p>METEOR 30д — 35 грн</p>
+                    <a href="/pay/meteor_subscription" class="buy-btn">Купить</a>
+                    <div id="description-meteor_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/feed - Утолить голод</p>
+                        <p>/iteminfo - Узнать айди предмета</p>
+                        <p>/loom - Виртуальный ткацкий станок</p>
+                        <p>/kits - Набор METEOR</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+ 5 регионов</p>
+                        <p>+ 7 слотов на аукционе</p>
+                        <p>+ 2 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- GUARDIAN 30д -->
+                <div class="product" onclick="toggleDescription('guardian_30d')">
+                    <img src="{{ url_for('static', filename='images/guardian_30d.jpg') }}" alt="GUARDIAN 30д">
+                    <p>GUARDIAN 30д — 49 грн</p>
+                    <a href="/pay/guardian_subscription" class="buy-btn">Купить</a>
+                    <div id="description-guardian_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/ext - Потушить себя</p>
+                        <p>/ignore (ник)- Игнорировать игрока</p>
+                        <p>/clear - Очистить себе инвентарь</p>
+                        <p>/cartographytable - Открыть стол картографа</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+5 регионов</p>
+                        <p>18 слотов на аукционе</p>
+                        <p>3 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- PALADIN 30д -->
+                <div class="product" onclick="toggleDescription('paladin_30d')">
+                    <img src="{{ url_for('static', filename='images/paladin_30d.jpg') }}" alt="PALADIN 30д">
+                    <p>PALADIN 30д — 79 грн</p>
+                    <a href="/pay/paladin_subscription" class="buy-btn">Купить</a>
+                    <div id="description-paladin_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/heal - Пополнить здоровье</p>
+                        <p>/ptime - Установить личное время суток</p>
+                        <p>/repair - Починить один предмет</p>
+                        <p>/kits - Набор PALADIN</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+ 6 регионов</p>
+                        <p>10 слотов на аукционе</p>
+                        <p>3 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- NEO 30д -->
+                <div class="product" onclick="toggleDescription('neo_30d')">
+                    <img src="{{ url_for('static', filename='images/neo_30d.jpg') }}" alt="NEO 30д">
+                    <p>NEO 30д — 149 грн</p>
+                    <a href="/pay/neo_subscription" class="buy-btn">Купить</a>
+                    <div id="description-neo_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/repair all - Починить все предметы</p>
+                        <p>/head - Получить голову игрока</p>
+                        <p>/dura - Узнать айди предмета</p>
+                        <p>/stonecutter - Виртуальный камнерез</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+ 6 регионов</p>
+                        <p>+ 12 слотов на аукционе</p>
+                        <p>+ 3 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- MOON 30д -->
+                <div class="product" onclick="toggleDescription('moon_30d')">
+                    <img src="{{ url_for('static', filename='images/moon_30d.jpg') }}" alt="MOON 30д">
+                    <p>MOON 30д — 239 грн</p>
+                    <a href="/pay/moon_subscription" class="buy-btn">Купить</a>
+                    <div id="description-moon_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/invsee - Доступ к чужому инвентарь</p>
+                        <p>/broadcast - Возможность писать объявления</p>
+                        <p>/book - Возможность редактировать книги</p>
+                        <p>/trash - Виртуальная мусорка</p>
+                        <p>/near - Найти игрока (100 метров)</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+ Анимированный префикс</p>
+                        <p>+7 регионов</p>
+                        <p>+ 16 слотов на аукционе</p>
+                        <p>+4 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- MAGISTER 30д -->
+                <div class="product" onclick="toggleDescription('magister_30d')">
+                    <img src="{{ url_for('static', filename='images/magister_30d.jpg') }}" alt="MAGISTER 30д">
+                    <p>MAGISTER 30д — 539 грн</p>
+                    <a href="/pay/magister_subscription" class="buy-btn">Купить</a>
+                    <div id="description-magister_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/ec (ник) - Открыть эндер-сундук игрока</p>
+                        <p>/msgtoggle - Отключить ЛС</p>
+                        <p>/near - Найти игрока (200 метров)</p>
+                        <p>/commandblock - Командный блок</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+ Анимированный префикс</p>
+                        <p>7 регионов</p>
+                        <p>18 слотов на аукционе</p>
+                        <p>4 точки дома</p>
+                    </div>
+                </div>
+
+                <!-- ROCKET 30д -->
+                <div class="product" onclick="toggleDescription('rocket_30d')">
+                    <img src="{{ url_for('static', filename='images/rocket_30d.jpg') }}" alt="ROCKET 30д">
+                    <p>ROCKET 30д — 749 грн</p>
+                    <a href="/pay/rocket_subscription" class="buy-btn">Купить</a>
+                    <div id="description-rocket_30d" class="product-description">
+                        <h4>Команды:</h4>
+                        <p>/nick - Сменить псевдоним в игре</p>
+                        <p>/realname - Узнать реальный ник игрока</p>
+                        <p>/near - Найти игрока (300 метров)</p>
+                        <p>/smithingtable - Направить на игрока молнию</p>
+                        <p>/thor - Ударить игрока молнией</p>
+                        <h4>Доп. возможности:</h4>
+                        <p>+ Анимированный префикс</p>
+                        <p>+ 8 регионов</p>
+                        <p>+ 25 слотов на аукционе</p>
+                        <p>+5 точек дома</p>
+                    </div>
+                </div>
+
+                <!-- Донат кейс -->
+                <div class="product" onclick="toggleDescription('donate_case')">
+                    <img src="{{ url_for('static', filename='images/donate_case.jpg') }}" alt="Донат Кейс">
+                    <p>Донат Кейс — 59 грн</p>
+                    <a href="/pay/donate_case" class="buy-btn">Купить</a>
+                    <div id="description-donate_case" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>При покупке данного товара, Вам будет выдана услуга "Донат ключ" на сервере, который можно активировать, введя команду /warp case</p>
+                    </div>
+                </div>
+
+                <!-- Кейс из титула -->
+                <div class="product" onclick="toggleDescription('title_case')">
+                    <img src="{{ url_for('static', filename='images/title_case.jpg') }}" alt="Кейс из титула">
+                    <p>Кейс из титула — 19 грн</p>
+                    <a href="/pay/title_case" class="buy-btn">Купить</a>
+                    <div id="description-title_case" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>При покупке данного товара, Вам будет выдана услуга "титул ключ" на сервере, который можно активировать, введя команду /warp case</p>
+                    </div>
+                </div>
+
+                <!-- Кейс из монет -->
+                <div class="product" onclick="toggleDescription('coin_case')">
+                    <img src="{{ url_for('static', filename='images/coin_case.jpg') }}" alt="Кейс из монет">
+                    <p>Кейс из монет — 29 грн</p>
+                    <a href="/pay/coin_case" class="buy-btn">Купить</a>
+                    <div id="description-coin_case" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>При покупке данного товара, Вам будет выдана услуга "кейс из монетами" на сервере, который можно активировать, введя команду /warp case</p>
+                    </div>
+                </div>
+
+                <!-- Кейс из осколков -->
+                <div class="product" onclick="toggleDescription('shard_case')">
+                    <img src="{{ url_for('static', filename='images/shard_case.jpg') }}" alt="Кейс из осколков">
+                    <p>Кейс из осколков — 59 грн</p>
+                    <a href="/pay/shard_case" class="buy-btn">Купить</a>
+                    <div id="description-shard_case" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>При покупке данного товара, Вам будет выдана услуга "осколки ключ" на сервере, который можно активировать, введя команду /warp case</p>
+                    </div>
+                </div>
+
+                <!-- Осколки -->
+                <div class="product" onclick="toggleDescription('shards')">
+                    <img src="{{ url_for('static', filename='images/shards.jpg') }}" alt="Осколки">
+                    <p>Осколки (100 шт) — 39 грн</p>
+                    <a href="/pay/shards" class="buy-btn">Купить</a>
+                    <div id="description-shards" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>Осколки — это дополнительная валюта на нашем сервере. За них вы можете приобрести множество уникальных предметов, которые помогут вам в поединках против других игроков.</p>
+                        <p>Осколки служат отличным дополнением в вашем игровом процессе, открывая новые возможности для улучшения вашего снаряжения, навыков и тактики.</p>
+                        <p>Не упустите шанс использовать Осколки для покупки мощных предметов, которые придадут вам преимущество в бою!</p>
+                    </div>
+                </div>
+
+                <!-- Боевой Пропуск -->
+                <div class="product" onclick="toggleDescription('battle_pass')">
+                    <img src="{{ url_for('static', filename='images/pass.jpg') }}" alt="Боевой Пропуск">
+                    <p>Боевой Пропуск — 89 грн</p>
+                    <a href="/pay/battle_pass" class="buy-btn">Купить</a>
+                    <div id="description-battle_pass" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>Боевой пропуск, который дает Вам дополнительные бонусы и задания на протяжении месяца.</p>
+                    </div>
+                </div>
+
+                <!-- Разбан -->
+                <div class="product" onclick="toggleDescription('unban')">
+                    <img src="{{ url_for('static', filename='images/unban.jpg') }}" alt="Разбан">
+                    <p>Разбан — 222 грн</p>
+                    <a href="/pay/unban" class="buy-btn">Купить</a>
+                    <div id="description-unban" class="product-description">
+                        <h4>Описание:</h4>
+                        <p>Самый обыкновенный разбан. Не разбанит вас, если:</p>
+                        <ul>
+                            <li>Вы были много раз в бане</li>
+                            <li>Вы сильно вредите серверу</li>
+                            <li>Занимаетесь взломами</li>
+                            <li>И так далее...</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 PoliTime. Все права защищены.</p>
+    </footer>
+</body>
+</html>
